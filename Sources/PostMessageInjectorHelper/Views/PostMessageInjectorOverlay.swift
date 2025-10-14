@@ -4,11 +4,14 @@ import WebKit
 public struct PostMessageInjectorOverlay: View {
     @ObservedObject private var state: PostMessageInjectorState
     
+    private let canInject: Bool
+    
     private var handler: PostMessageInjectorHandler {
         PostMessageInjectorHandler(state: state)
     }
     
-    public init(postMessageInjectorState: PostMessageInjectorState) {
+    public init(canInject: Bool, postMessageInjectorState: PostMessageInjectorState) {
+        self.canInject = canInject
         self.state = postMessageInjectorState
     }
     
