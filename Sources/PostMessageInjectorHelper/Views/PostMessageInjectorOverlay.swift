@@ -16,10 +16,12 @@ public struct PostMessageInjectorOverlay: View {
     }
     
     public var body: some View {
-        if !state.isOverlayPresented {
-            button
-        } else {
-            messageInjectorOverlay
+        if canInject {
+            if !state.isOverlayPresented {
+                button
+            } else {
+                messageInjectorOverlay
+            }
         }
     }
     
